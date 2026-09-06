@@ -50,7 +50,7 @@
       </a>
 
       <a
-        href="./pages/login.html"
+        href="/login"
         class="rounded-full bg-white px-5 py-2.5 font-bold text-ink"
       >
         Entrar

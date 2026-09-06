@@ -6,6 +6,9 @@
 
   <title>Entrar — Tinder</title>
 
+  @vite('resources/css/global.css')
+  @vite('resources/js/shared.js')
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -31,7 +34,6 @@
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-  <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 
 <body class="min-h-screen bg-[#f7f7fb] text-ink">
@@ -39,7 +41,7 @@
 
     <section class="login-visual relative hidden overflow-hidden lg:block">
       <a
-        href="../index.html"
+        href="/"
         class="absolute left-10 top-8 z-10 flex items-center gap-2 text-2xl font-black text-white"
       >
         <i data-lucide="flame" class="fill-white"></i>
@@ -129,8 +131,6 @@
     </section>
   </main>
 
-  <script src="../assets/js/shared.js"></script>
-
   <script>
     const formulario = document.querySelector("#demoLogin");
     const botaoDemonstracao = document.querySelector("#demoBtn");
@@ -139,11 +139,11 @@
 
     formulario.addEventListener("submit", function (evento) {
       evento.preventDefault();
-      window.location.href = "discover.html";
+      window.location.href = "/discover";
     });
 
     botaoDemonstracao.addEventListener("click", function () {
-      window.location.href = "discover.html";
+      window.location.href = "/discover";
     });
 
     botaoMostrarSenha.addEventListener("click", function () {

@@ -31,7 +31,9 @@
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-  <link rel="stylesheet" href="../assets/css/global.css">
+  @vite('resources/css/global.css')
+  @vite('resources/js/shared.js')
+
 </head>
 
 <body class="bg-[#f7f7fb] text-ink">
@@ -60,8 +62,6 @@
       </div>
     </main>
   </div>
-
-  <script src="../assets/js/shared.js"></script>
 
   <script>
     const listaDeMatches = document.querySelector("#matchesList");

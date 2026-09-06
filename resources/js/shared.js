@@ -50,39 +50,39 @@ if (navegacao) {
   navegacao.innerHTML = `
     <div class="side-nav">
 
-      <a href="../index.html" class="nav-brand">
+      <a href="/" class="nav-brand">
         <i data-lucide="flame" class="fill-white"></i>
         <span>tinder</span>
       </a>
 
       <div class="nav-links">
         <a
-          href="discover.html"
-          class="${paginaAtual === "discover.html" ? "active" : ""}"
+          href="/discover"
+          class="${paginaAtual === "/discover" ? "active" : ""}"
         >
           <i data-lucide="flame"></i>
           <span>Descobrir</span>
         </a>
 
         <a
-          href="matches.html"
-          class="${paginaAtual === "matches.html" ? "active" : ""}"
+          href="/matches"
+          class="${paginaAtual === "/matches" ? "active" : ""}"
         >
           <i data-lucide="heart"></i>
           <span>Matches</span>
         </a>
 
         <a
-          href="chats.html"
-          class="${paginaAtual === "chats.html" ? "active" : ""}"
+          href="/chats"
+          class="${paginaAtual === "/chats" ? "active" : ""}"
         >
           <i data-lucide="message-circle"></i>
           <span>Conversas</span>
         </a>
 
         <a
-          href="profile.html"
-          class="${paginaAtual === "profile.html" ? "active" : ""}"
+          href="/profile"
+          class="${paginaAtual === "/profile" ? "active" : ""}"
         >
           <i data-lucide="user-round"></i>
           <span>Perfil</span>

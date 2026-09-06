@@ -7,6 +7,9 @@
   <title>Meu perfil — Tinder</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  @vite('resources/css/global.css')
+  @vite('resources/js/shared.js')
 
   <script>
     tailwind.config = {
@@ -31,7 +34,6 @@
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-  <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 
 <body class="bg-[#f7f7fb] text-ink">
@@ -136,7 +138,6 @@
     </main>
   </div>
 
-  <script src="../assets/js/shared.js"></script>
 
   <script>
     const botaoEditar = document.querySelector("#editBtn");
