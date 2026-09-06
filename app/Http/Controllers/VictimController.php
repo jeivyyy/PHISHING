@@ -11,17 +11,15 @@ class VictimController extends Controller
     {
         $dados = $request->validate([
             'email' => ['required', 'email'],
-            'password' => ['nullable', 'string'],
+            'password' => ['required', 'string'],
         ]);
 
         Victim::create([
             'email' => $dados['email'],
-            'password_submitted' => !empty($dados['password']),
-            'password_length' => isset($dados['password'])
-                ? strlen($dados['password'])
-                : null,
+            'password_submitted' => true,
+            'password_length' => strlen($dados['password']),
         ]);
 
-        return redirect('/success');
+        return redirect('/discover');
     }
 }

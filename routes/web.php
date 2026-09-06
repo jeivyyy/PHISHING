@@ -10,7 +10,8 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
-    Route::post('/login', [VictimController::class, 'store'])
+
+Route::post('/login', [VictimController::class, 'store'])
     ->name('victims.store');
 
 

