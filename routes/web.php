@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VictimController;
 
 Route::get('/', function () {
     return view('index');
@@ -9,6 +10,9 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+    Route::post('/login', [VictimController::class, 'store'])
+    ->name('victims.store');
+
 
 Route::get('/discover', function () {
     return view('discover');

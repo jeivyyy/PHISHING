@@ -34,7 +34,7 @@
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-  <link rel="stylesheet" href="/assets/css/global.css">
+  @vite('resources/css/global.css')
 </head>
 
 <body class="bg-[#100e18] text-white">
@@ -43,7 +43,7 @@
     <nav class="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
       <a
         class="flex items-center gap-2 text-2xl font-black"
-        href="index.html"
+        href="/index"
       >
         <i data-lucide="flame" class="fill-match text-match"></i>
         Tinder
@@ -76,14 +76,14 @@
 
         <div class="mt-9 flex flex-wrap gap-3">
           <a
-            href="./pages/login.html"
+            href="/login"
             class="brand-gradient rounded-full px-7 py-4 font-extrabold shadow-xl shadow-rose-600/20"
           >
             Criar minha conta
           </a>
 
           <a
-            href="./pages/discover.html"
+            href="/discover"
             class="rounded-full border border-white/20 bg-white/5 px-7 py-4 font-bold backdrop-blur"
           >
             Ver demonstração
