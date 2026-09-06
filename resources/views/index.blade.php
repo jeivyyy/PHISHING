@@ -95,7 +95,7 @@
       <div class="relative mx-auto hidden w-full max-w-lg lg:block">
         <div class="hero-orbit"></div>
 
-        <div class="relative mx-auto h-[610px] w-[340px] rotate-3 overflow-hidden rounded-[44px] border-[9px] border-white/15 bg-black shadow-2xl">
+        <div class="relative mx-auto h-152.5 w-85 rotate-3 overflow-hidden rounded-[44px] border-[9px] border-white/15 bg-black shadow-2xl">
 
           <img
             class="h-full w-full object-cover"

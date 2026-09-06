@@ -7,7 +7,7 @@
   <title>Meu perfil — Tinder</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   @vite('resources/css/global.css')
   @vite('resources/js/shared.js')
 
@@ -61,7 +61,7 @@
           </button>
         </header>
 
-        <section class="mt-8 overflow-hidden rounded-[32px] bg-white shadow-sm">
+        <section class="mt-8 overflow-hidden rounded-4x1 bg-white shadow-sm">
 
           <div class="profile-cover h-44"></div>
 
