@@ -1,26 +1,3 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $fileName = "dados_" . date("Y-m-d") . ".csv";
-    $file = fopen($fileName, 'w');
-    
-    fputcsv($file, array('id', 'email', 'password'));
-
-    foreach ($_POST as $key => $value) {
-
-        if (is_array($value)) {
-            foreach ($value as $item) {
-                fputcsv($file, array($key, $item));
-            }
-        } else {
-            fputcsv($file, array($key, $value));
-        }
-    }
-
-    fclose($file);
-}
-?>
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
