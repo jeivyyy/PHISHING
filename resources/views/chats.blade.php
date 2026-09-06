@@ -22,11 +22,13 @@
         }
       }
     };
-
-  @vite('resources/css/global.css')
-  @vite('resources/js/shared.js')
-
   </script>
+
+  @vite([
+    'resources/css/global.css',
+    'resources/js/shared.js',
+    'resources/js/app.js'
+  ])
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -116,72 +118,75 @@
   </div>
 
   <script>
-    const pessoas = getProfiles();
+    window.addEventListener("DOMContentLoaded", function () {
+      const pessoas = getProfiles();
 
-    const parametros = new URLSearchParams(window.location.search);
-    const indiceSelecionado = Number(parametros.get("person")) || 0;
-    const pessoaSelecionada = pessoas[indiceSelecionado];
+      const parametros = new URLSearchParams(window.location.search);
+      const indiceSelecionado = Number(parametros.get("person")) || 0;
+      const pessoaSelecionada = pessoas[indiceSelecionado];
 
-    const avatar = document.querySelector("#chatAvatar");
-    const nome = document.querySelector("#chatName");
-    const lista = document.querySelector("#chatList");
-    const formulario = document.querySelector("#messageForm");
-    const campoMensagem = document.querySelector("#messageInput");
-    const mensagens = document.querySelector("#messages");
+      const avatar = document.querySelector("#chatAvatar");
+      const nome = document.querySelector("#chatName");
+      const lista = document.querySelector("#chatList");
+      const formulario = document.querySelector("#messageForm");
+      const campoMensagem = document.querySelector("#messageInput");
+      const mensagens = document.querySelector("#messages");
 
-    avatar.src = pessoaSelecionada.image;
-    avatar.alt = "Foto de " + pessoaSelecionada.name;
-    nome.textContent = pessoaSelecionada.name;
+      avatar.src = pessoaSelecionada.image;
+      avatar.alt = "Foto de " + pessoaSelecionada.name;
+      nome.textContent = pessoaSelecionada.name;
 
-    lista.innerHTML = pessoas.map(function (pessoa, indice) {
-      let texto;
+      lista.innerHTML = pessoas.map(function (pessoa, indice) {
+        let texto;
 
-      if (indice === 0) {
-        texto = "Oi! Vi que você também...";
-      } else {
-        texto = "Vocês deram match!";
-      }
+        if (indice === 0) {
+          texto = "Oi! Vi que você também...";
+        } else {
+          texto = "Vocês deram match!";
+        }
 
-      return `
-        <a
-          href="?person=${indice}"
-          class="flex items-center gap-3 border-t border-black/5 p-4 hover:bg-black/[.025]"
-        >
-          <img
-            src="${pessoa.image}"
-            class="h-12 w-12 rounded-full object-cover"
-            alt="Foto de ${pessoa.name}"
+        return `
+          <a
+            href="?person=${indice}"
+            class="flex items-center gap-3 border-t border-black/5 p-4 hover:bg-black/[.025]"
           >
+            <img
+              src="${pessoa.image}"
+              class="h-12 w-12 rounded-full object-cover"
+              alt="Foto de ${pessoa.name}"
+            >
 
-          <span class="min-w-0">
-            <b>${pessoa.name}</b>
+            <span class="min-w-0">
+              <b>${pessoa.name}</b>
 
-            <small class="block truncate text-black/40">
-              ${texto}
-            </small>
-          </span>
-        </a>
-      `;
-    }).join("");
+              <small class="block truncate text-black/40">
+                ${texto}
+              </small>
+            </span>
+          </a>
+        `;
+      }).join("");
 
-    formulario.addEventListener("submit", function (evento) {
-      evento.preventDefault();
+      formulario.addEventListener("submit", function (evento) {
+        evento.preventDefault();
 
-      const texto = campoMensagem.value.trim();
+        const texto = campoMensagem.value.trim();
 
-      if (!texto) {
-        return;
-      }
+        if (!texto) {
+          return;
+        }
 
-      const mensagemSegura = texto.replace(/[<>]/g, "");
+        const mensagemSegura = texto.replace(/[<>]/g, "");
 
-      mensagens.insertAdjacentHTML(
-        "beforeend",
-        `<div class="bubble mine">${mensagemSegura}</div>`
-      );
+        mensagens.insertAdjacentHTML(
+          "beforeend",
+          `<div class="bubble mine">${mensagemSegura}</div>`
+        );
 
-      campoMensagem.value = "";
+        campoMensagem.value = "";
+      });
     });
+    
   </script>
 </body>
 </html>

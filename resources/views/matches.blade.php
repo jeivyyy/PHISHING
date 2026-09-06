@@ -64,45 +64,47 @@
   </div>
 
   <script>
-    const listaDeMatches = document.querySelector("#matchesList");
-    const pessoas = getProfiles();
+    window.addEventListener("DOMContentLoaded", function () {
+      const listaDeMatches = document.querySelector("#matchesList");
+      const pessoas = getProfiles();
 
-    listaDeMatches.innerHTML = pessoas.map(function (pessoa, indice) {
-      let mensagem;
+      listaDeMatches.innerHTML = pessoas.map(function (pessoa, indice) {
+        let mensagem;
 
-      if (indice === 0) {
-        mensagem = "Enviou uma mensagem";
-      } else {
-        mensagem = "Novo match — diga oi!";
-      }
+        if (indice === 0) {
+          mensagem = "Enviou uma mensagem";
+        } else {
+          mensagem = "Novo match — diga oi!";
+        }
 
-      return `
-        <a
-          href="chats.html?person=${indice}"
-          class="group overflow-hidden rounded-3xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-        >
-          <div class="relative aspect-[4/5] overflow-hidden">
-            <img
-              src="${pessoa.image}"
-              class="h-full w-full object-cover transition group-hover:scale-105"
-              alt="Foto de ${pessoa.name}"
-            >
+        return `
+          <a
+            href="/chats?person=${indice}"
+            class="group overflow-hidden rounded-3xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div class="relative aspect-[4/5] overflow-hidden">
+              <img
+                src="${pessoa.image}"
+                class="h-full w-full object-cover transition group-hover:scale-105"
+                alt="Foto de ${pessoa.name}"
+              >
 
-            <span class="absolute right-3 top-3 h-3 w-3 rounded-full border-2 border-white bg-emerald-400"></span>
-          </div>
+              <span class="absolute right-3 top-3 h-3 w-3 rounded-full border-2 border-white bg-emerald-400"></span>
+            </div>
 
-          <div class="p-4">
-            <h2 class="text-lg font-extrabold">
-              ${pessoa.name}, ${pessoa.age}
-            </h2>
+            <div class="p-4">
+              <h2 class="text-lg font-extrabold">
+                ${pessoa.name}, ${pessoa.age}
+              </h2>
 
-            <p class="mt-1 truncate text-sm text-black/45">
-              ${mensagem}
-            </p>
-          </div>
-        </a>
-      `;
-    }).join("");
+              <p class="mt-1 truncate text-sm text-black/45">
+                ${mensagem}
+              </p>
+            </div>
+          </a>
+        `;
+      }).join("");
+    });
   </script>
 </body>
 </html>
