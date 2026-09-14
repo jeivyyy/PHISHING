@@ -116,7 +116,7 @@
         </form>
 
         <div class="my-6 flex items-center gap-3 text-xs text-black/30">
-          <span class="h-px flex-1 bg-black/10"></span>
+           <span class="h-px flex-1 bg-black/10"></span>
           OU
           <span class="h-px flex-1 bg-black/10"></span>
         </div>
@@ -132,7 +132,7 @@
           Demonstração acadêmica: os dados digitados não são enviados nem armazenados.
         </p>
       </div>
-    </section>
+    </section> 
   </main>
 
   <script>
@@ -152,5 +152,6 @@
       }
     });
   </script>
+
 </body>
 </html>
