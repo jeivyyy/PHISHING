@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="{{ asset('icons/site.ico') }}">
     <meta charset="UTF-8">
 
     <meta name="viewport"

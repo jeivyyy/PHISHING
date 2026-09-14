@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Descobrir — Tinder</title>
+  <link rel="icon" type="image/x-icon" href="{{ asset('icons/site.ico') }}">
+  
 
   <script src="https://cdn.tailwindcss.com"></script>
 

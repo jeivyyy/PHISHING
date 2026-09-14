@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Tinder — conexões começam aqui</title>
+  <link rel="icon" type="image/x-icon" href="{{ asset('icons/site.ico') }}">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
